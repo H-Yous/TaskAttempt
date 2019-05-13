@@ -23,7 +23,20 @@ public class TestClass extends TestCase {
 		assertFalse(fam.male("Dylan"));
 	}
 	
-
+	public void testFemale() {
+		assertTrue(fam.female("Naomi"));
+	}
+	
+	public void testFemaleIfAssigned() {
+		fam.female("Naomi");
+		assertFalse(fam.female("Naomi"));
+	}
+	
+	public void testFemaleOfMadePerson() {
+		fam.person.add(new People("Naomi"));
+		fam.person.get(0).setGender("Female");
+		assertFalse(fam.female("Naomi"));
+	}
 	
 //	public void testMaleWhenSpouseMale() {
 //		

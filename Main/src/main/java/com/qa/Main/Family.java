@@ -27,7 +27,25 @@ public class Family {
 		}
 	}
 	
-	
+	public boolean female(String name) {
+		if(ishere(name)) {
+			People checkPerson = getPerson(name);
+			
+			if(checkPerson.getGender().equals("None")) {
+				checkPerson.setGender("Female");
+				return true;
+			}
+			else {
+				return false;
+			}
+		} 
+		else {
+			person.add(new People(name));
+			People newPerson = getPerson(name);
+			newPerson.setGender("Female");
+			return true;
+		}
+	}
 	
 	
 	public boolean ishere(String name) {
