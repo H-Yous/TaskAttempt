@@ -47,7 +47,39 @@ public class Family {
 		}
 	}
 	
-	
+	public boolean isMale(String name) { 
+
+		if(ishere(name)) { 
+			People person2 = getPerson(name); 
+
+			if(person2.getGender().equals("Male")) { 
+				return true;
+			}
+			else { return false; } 
+		}
+		else { 
+			person.add(new People(name)); 
+			return false;
+		}
+
+	}
+
+	public boolean isFemale(String name) {
+		if(ishere(name)) { 
+			People person2 = getPerson(name); 
+
+			if(person2.getGender().equals("Female")) { 
+				return true;
+			}
+			else { return false; } 
+		}
+		else { 
+			person.add(new People(name)); 
+			return false;
+		}
+	}
+
+
 	public boolean ishere(String name) {
 		boolean ishe = person.stream().anyMatch(x -> x.getName().equals(name));
 		return ishe;
